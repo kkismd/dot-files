@@ -8,3 +8,6 @@ ln -s $HOME/src/dot-files/.vim $HOME/.vim
 ln -s $HOME/src/dot-files/.screenrc $HOME/.screenrc
 ln -s $HOME/src/dot-files/.lv $HOME/.lv
 
+if [ ! -d .vim/bundle/vundle/.git ]; then
+  git submodule add http://github.com/gmarik/vundle.git .vim/bundle/vundle
+fi

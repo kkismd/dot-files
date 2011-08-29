@@ -1,8 +1,23 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'rails.vim'
+Bundle 'surround.vim'
+Bundle 'snipMate'
+Bundle 'endwise.vim'
+Bundle 'matchit.zip'
+Bundle 'ku'
+Bundle 'openssl.vim'
+Bundle 'unite.vim'
+Bundle 'scala.vim'
+
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
-set nocompatible
 set smartcase
 set laststatus=2
 set hlsearch

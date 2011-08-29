@@ -1,0 +1,13 @@
+#hardstatus alwayslastline "[LOCAL Mac %02c] %`%-w%{=b bw}%n %t%{-}%+w"
+#hardstatus alwayslastline "%`%-w%{=b bw}%n %t%{-}%+w"
+
+caption always "%-w%10L>%{=b bw}%n %t%{-}%+w%-0="
+hardstatus alwayslastline "[%H %02c]"
+escape ^Tt
+autodetach on
+vbell off
+defscrollback 1024000
+
+defbce "on"
+term xterm-256color
+termcapinfo xterm-256color 'is=rmJH?7h?1;4;6l'

@@ -19,6 +19,9 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set smartcase
+set smartindent
+set smarttab
+set incsearch
 set laststatus=2
 set hlsearch
 set nowrap

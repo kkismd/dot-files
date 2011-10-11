@@ -36,4 +36,11 @@ PROMPT2='%_%% '
 # Firefoxの複数プロファイルを管理
 alias ffp='/Applications/Firefox.app/Contents/MacOS/firefox-bin -ProfileManager'
 
+# gitコマンドの補完
+if [ -f ~/bin/git-completion.bash ]; then
+  autoload bashcompinit
+  bashcompinit
+  source ~/bin/git-completion.bash
+fi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function

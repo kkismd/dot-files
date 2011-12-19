@@ -27,7 +27,7 @@ setopt hist_verify
 alias ls='ls -F'
 alias ll='ls -lF'
 alias la='ls -alF'
-alias gvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -g "$@"'
+alias grep='grep --color=auto'
 
 PROMPT='%{[33m%}%~%{[m%}
 [%n] %% '
@@ -36,6 +36,12 @@ PROMPT2='%_%% '
 
 # Firefoxの複数プロファイルを管理
 alias ffp='/Applications/Firefox.app/Contents/MacOS/firefox-bin -ProfileManager'
+
+# MacVimで開く
+alias gvim='open -a /Applications/MacVim.app $*'
+
+# CotEditorで開く
+alias cot='open -a /Applications/CotEditor.app $*'
 
 # gitコマンドの補完
 if [ -f ~/bin/git-completion.bash ]; then

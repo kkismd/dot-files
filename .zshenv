@@ -15,3 +15,6 @@ export HGENCODING=utf-8
 
 # Node.js
 export PATH=$HOME/local/node/bin:$PATH
+
+# Git
+export GIT_EDITOR=/usr/bin/vim

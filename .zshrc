@@ -30,7 +30,7 @@ alias la='ls -alF'
 alias gvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -g "$@"'
 
 PROMPT='%{[33m%}%~%{[m%}
-[%n] %% '
+[%n@%m] %% '
 PROMPT2='%_%% '
 #RPROMPT='%{[33m%}%~%{[m%}'
 

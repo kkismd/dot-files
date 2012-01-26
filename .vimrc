@@ -4,7 +4,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'rails.vim'
+Bundle 'tpope/vim-rails'
 Bundle 'surround.vim'
 Bundle 'snipMate'
 Bundle 'endwise.vim'

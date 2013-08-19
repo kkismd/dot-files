@@ -1,10 +1,11 @@
 # The following lines were added by compinstall
 
-#zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:default' menu select=1
 zstyle :compinstall filename '/home/shimada/.zshrc'
 
 autoload -Uz compinit
+autoload -Uz vcs_info
+
 compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
@@ -30,18 +31,15 @@ alias la='ls -alF'
 alias grep='grep --color=auto'
 
 PROMPT='%{[33m%}%~%{[m%}
-[%n@%m] %% '
-PROMPT2='%_%% '
+[%n@%m] %# '
+PROMPT2='%_%# '
 #RPROMPT='%{[33m%}%~%{[m%}'
 
-# Firefoxの複数プロファイルを管理
-alias ffp='/Applications/Firefox.app/Contents/MacOS/firefox-bin -ProfileManager'
-
 # MacVimで開く
-alias gvim='open -a /Applications/MacVim.app $*'
+alias gvim='open -a MacVim.app $*'
 
 # CotEditorで開く
-alias cot='open -a /Applications/CotEditor.app $*'
+alias cot='open -a CotEditor.app $*'
 
 # gitコマンドの補完
 if [ -f ~/bin/git-completion.bash ]; then
@@ -50,4 +48,13 @@ if [ -f ~/bin/git-completion.bash ]; then
   source ~/bin/git-completion.bash
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+# vcs_info
+zstyle ':vcs_info:*' enable git cvs svn
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+precmd() {
+  psvar=()
+  vcs_info
+  psvar[1]=$vcs_info_msg_0_
+}
+PROMPT=$'%2F%n@%m%f %3F%~%f%1v\n%# '
+

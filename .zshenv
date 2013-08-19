@@ -18,3 +18,10 @@ export PATH=$HOME/local/node/bin:$PATH
 
 # Git
 export GIT_EDITOR=/usr/bin/vim
+
+# rbenv
+eval "$(rbenv init -)"
+#source ~/.rbenv/completions/rbenv.zsh
+
+# ec2-tools
+export PATH=~/Applications/ec2-api-tools-1.5.3.1/bin:$PATH

@@ -32,17 +32,15 @@ set formatoptions+=mM
 "コマンドをステータス行に表示
 set showcmd
 
-"一文字削除でyankレジスタを壊さない
-nnoremap X x
-nnoremap x "_x
-
 syntax on
 filetype on
 filetype indent on
 filetype plugin on
 
 "colorscheme pyte
-colorscheme TermPyte
+"colorscheme TermPyte
+"colorscheme desert
+colorscheme railscasts
 
 "起動時のメッセージを消す
 set shortmess+=I
@@ -95,3 +93,12 @@ let howm_fileformat      = 'unix'
 
 let mygrepprg = 'grep'
 let MyGrep_ShellEncoding = 'utf-8'
+
+" surround
+"  for erb
+let g:surround_{char2nr('%')} = "<% \r %>"
+let g:surround_{char2nr('-')} = "<% \r -%>"
+let g:surround_{char2nr('=')} = "<%=\r %>"
+"  for gettext
+let g:surround_{char2nr('_')} = "_('\r')"
+

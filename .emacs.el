@@ -29,6 +29,7 @@
       (setq-default line-spacing 1)
       (mac-set-input-method-parameter 'japanese 'cursor-color "darkred")
       (mac-set-input-method-parameter 'roman 'cursor-color "darkslategray")
+      (tool-bar-mode nil)
       (mac-add-ignore-shortcut '(control))))
 
 ;;; Language
@@ -36,9 +37,7 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
-
 (menu-bar-mode t)
-(tool-bar-mode nil)
 (setq display-time-24hr-format t) ;; default nil ex. 8:08am
 (display-time)
 (transient-mark-mode t)
@@ -79,11 +78,11 @@
 
 
 ;;; elscreen
-(require 'elscreen)
-(require 'elscreen-dnd)
-(require 'elscreen-dired)
-(require 'elscreen-gf)
-(require 'elscreen-speedbar)
+;(require 'elscreen)
+;(require 'elscreen-dnd)
+;(require 'elscreen-dired)
+;(require 'elscreen-gf)
+;(require 'elscreen-speedbar)
 
 ;; バッファと同時にスクリーンもkillする
 (defun kill-buffer/screen ()
@@ -92,19 +91,19 @@
   (unless (elscreen-one-screen-p)
       (elscreen-kill)))
 
-(define-key elscreen-map  "\C-z" 'kill-buffer/screen)
+;(define-key elscreen-map  "\C-z" 'kill-buffer/screen)
 ;(define-key global-map "\C-xk" 'kill-buffer/screen)
 ;(define-key global-map "\C-x\C-k" 'kill-buffer/screen)
 
 ;;; タブ移動をMac風に変更
-(define-key global-map "\M-}" 'elscreen-next)
-(define-key global-map "\M-{" 'elscreen-previous)
+;(define-key global-map "\M-}" 'elscreen-next)
+;(define-key global-map "\M-{" 'elscreen-previous)
 
 ;; diredとバッティングするので調整
-(add-hook 'dired-load-hook
-          (lambda ()
-            (define-key dired-mode-map "\M-}" 'elscreen-next)
-            (define-key dired-mode-map "\M-{" 'elscreen-previous)))
+;(add-hook 'dired-load-hook
+;          (lambda ()
+;            (define-key dired-mode-map "\M-}" 'elscreen-next)
+;            (define-key dired-mode-map "\M-{" 'elscreen-previous)))
 
 (show-paren-mode)
 ;; マッチする括弧の中をボールドに
@@ -124,10 +123,10 @@
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
 ;;; howm
-(setq howm-directory (expand-file-name "~/Dropbox/howm/"))
-(require 'howm)
-(require 'elscreen-howm)
-(setq howm-view-summary-persistent nil)
+;(setq howm-directory (expand-file-name "~/Dropbox/howm/"))
+;(require 'howm)
+;(require 'elscreen-howm)
+;(setq howm-view-summary-persistent nil)
 
 ;;; calendarから日付を入力
 (eval-after-load "calendar"
@@ -144,11 +143,6 @@
          (exit-calendar)
          (insert day)))))
 
-;;; 罫線を引く
-(define-key howm-mode-map "\C-c-" 'my-insert-k)
-(defun my-insert-k ()
-  (interactive)
-  (insert "----------------------------------------------------------------------------------------\n"))
 
 ;;; Ruby
 (require 'ruby-mode)
